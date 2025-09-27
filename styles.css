@@ -1,0 +1,417 @@
+/* style.css */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap');
+
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #8B4513; /* Saddle Brown - for accents and CTAs */
+    --secondary-color: #2F4F4F; /* Dark Slate Gray - for text and headers */
+    --background-color: #FDF5E6; /* Old Lace - for a soft, warm background */
+    --card-bg-color: #FFFFFF;
+    --footer-bg-color: #333333;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 0;
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: start; */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    width: 200px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #a0522d; /* Darker brown */
+}
+
+/* --- General Content Sections --- */
+.page-header {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #EAE0D5;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+}
+
+.content-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.content-section p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- Service Cards (Homepage) --- */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 350px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* --- Portfolio Gallery (Residential & Commercial pages) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: #f0f0f0;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 1rem;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ADD THIS TO THE END OF YOUR style.css FILE */
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    text-align: left;
+}
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+.contact-info h3 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+/* ADD THIS TO THE END OF YOUR style.css FILE */
+
+/* Style for the new image logo in the header */
+.logo img {
+    height: 100px;  /* Adjust this value to make your logo bigger or smaller */
+    width: auto;
+    vertical-align: middle; /* Helps align the logo with the nav links */
+    background-color: wheat;
+  }
+/* ADD ALL OF THIS TO THE END OF your style.css FILE */
+
+/* --- Styles for Fade-in Animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Styles for Mobile Navigation & Hamburger --- */
+.hamburger-menu {
+    display: none; /* Hidden by default on large screens */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 21px;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px; /* Adjust based on your header height */
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        max-height: 300px; /* Or enough height to show all links */
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 1.5rem 0;
+        display: block;
+        width: 100%;
+        border-bottom: none;
+    }
+    
+    .nav-links a:hover {
+        background-color: #f0f0f0;
+        border-bottom: none;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show the hamburger on small screens */
+    }
+
+    /* Animate hamburger to an 'X' shape when active */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
